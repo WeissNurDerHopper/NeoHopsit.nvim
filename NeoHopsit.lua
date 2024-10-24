@@ -1,4 +1,4 @@
-print("Plugin in lua läuft")
+local M = {}
 
 Pos1 = 1
 Pos2 = 2
@@ -20,7 +20,7 @@ local function IoV(table, value)
   end
 end
 
-local function SimulateHop(text)
+M.SimulateHop = function SimulateHop(text)
   while #text > Pos1 and #text > Pos2 do
     print(string.sub(text,Pos1,Pos1))
     if IoV(AlphabetSmall,string.sub(text,Pos1,Pos1)) == nil then
@@ -31,4 +31,6 @@ local function SimulateHop(text)
   end
 end
 print(IoV(AlphabetSmall,"b"))
-SimulateHop(funnyText)
+M.SimulateHop(funnyText)
+
+return M
