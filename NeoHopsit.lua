@@ -11,7 +11,7 @@ end
 
 local funnyText = Spaceless("I SUCK big balls")
 
-local function IoV(table, value)
+M.IoA =function IoV(table, value)
   local found = false 
   for i, v in pairs(table) do
     if v == value then
