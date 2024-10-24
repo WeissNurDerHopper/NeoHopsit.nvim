@@ -12,7 +12,7 @@ end
 local funnyText = Spaceless("I SUCK big balls")
 
 M.IoA =function(table, value)
-  local found = false 
+  local found = false
   for i, v in pairs(table) do
     if v == value then
       return i
@@ -30,7 +30,7 @@ M.SimulateHop = function(text)
     end
   end
 end
-vim.notify(M.IoA(AlphabetSmall,"b"))
+print(M.IoA(AlphabetSmall,"b"))
 M.SimulateHop(funnyText)
 
 return M
