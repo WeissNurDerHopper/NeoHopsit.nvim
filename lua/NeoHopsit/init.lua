@@ -1,7 +1,5 @@
 local M = {}
 
-Pos1 = 1
-Pos2 = 2
 AlphabetSmall = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
 AlphabetLarge = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
 
@@ -21,7 +19,9 @@ M.IoA =function(table, value)
 end
 
 M.SimulateHop = function(text)
-  while #text > Pos1 and #text > Pos2 do
+  local pos1 = 1
+  local pos2 = 2
+  while #text > pos1 and #text > pos2 do
     print(string.sub(text,Pos1,Pos1))
     if M.IoA(AlphabetSmall,string.sub(text,Pos1,Pos1)) == nil then
       Pos1 = Pos1 + M.IoA(AlphabetLarge,string.sub(text,Pos1,Pos1))
@@ -30,6 +30,7 @@ M.SimulateHop = function(text)
     end
   end
 end
+
 print(M.IoA(AlphabetSmall,"b"))
 M.SimulateHop(funnyText)
 
