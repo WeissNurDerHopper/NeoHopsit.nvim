@@ -9,10 +9,10 @@ local function Spaceless(str)
   return string.gsub(str, "%s+", "")
 end
 
-local funnyText = Spaceless("I SUCK big balls")
+local funnyText = Spaceless("I SUCK big balls \n \n bcdefghi")
 
 M.IoA =function(table, value)
-  local found = false
+  --local found = false
   for i, v in pairs(table) do
     if v == value then
       return i
