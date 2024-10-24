@@ -30,7 +30,7 @@ M.SimulateHop = function SimulateHop(text)
     end
   end
 end
-print(IoV(AlphabetSmall,"b"))
+vim.notify(IoV(AlphabetSmall,"b"))
 M.SimulateHop(funnyText)
 
 return M
