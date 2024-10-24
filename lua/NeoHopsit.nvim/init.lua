@@ -11,7 +11,7 @@ end
 
 local funnyText = Spaceless("I SUCK big balls")
 
-M.IoA =function IoV(table, value)
+M.IoA =function(table, value)
   local found = false 
   for i, v in pairs(table) do
     if v == value then
@@ -20,17 +20,17 @@ M.IoA =function IoV(table, value)
   end
 end
 
-M.SimulateHop = function SimulateHop(text)
+M.SimulateHop = function(text)
   while #text > Pos1 and #text > Pos2 do
     print(string.sub(text,Pos1,Pos1))
-    if IoV(AlphabetSmall,string.sub(text,Pos1,Pos1)) == nil then
-      Pos1 = Pos1 + IoV(AlphabetLarge,string.sub(text,Pos1,Pos1))
+    if M.IoA(AlphabetSmall,string.sub(text,Pos1,Pos1)) == nil then
+      Pos1 = Pos1 + M.IoA(AlphabetLarge,string.sub(text,Pos1,Pos1))
     else
-      Pos1 = Pos1 + IoV(AlphabetSmall,string.sub(text,Pos1,Pos1))
+      Pos1 = Pos1 + M.IoA(AlphabetSmall,string.sub(text,Pos1,Pos1))
     end
   end
 end
-vim.notify(IoV(AlphabetSmall,"b"))
+vim.notify(M.IoA(AlphabetSmall,"b"))
 M.SimulateHop(funnyText)
 
 return M
